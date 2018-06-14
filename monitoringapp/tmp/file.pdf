@@ -1,0 +1,11 @@
+cd realtodigitalsynch
+docker build -t realtodigitalsynch .
+cd ..
+cd sensordataproducer
+docker build -t sensordataproducer .
+cd ..
+cd monitoringapp
+docker build -t monitoringapp .
+cd ..
+docker-compose up -d
+
