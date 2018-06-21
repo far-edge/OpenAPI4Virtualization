@@ -2,15 +2,13 @@ version: "2"
 
 services:
   postgres:
-    build: postgres
-    image: postgres
+    image: supsi4faredge/openapi4virtualization:postgres
     container_name: postgres
     restart: always
     ports:
       - 5432:5432
   virtual-factory-layer1:
-    build: virtual-factory
-    image: virtual-factory
+    image: supsi4faredge/openapi4virtualization:virtual-factory
     container_name: virtual-factory-layer1
     command: [sh, -c, "java -jar -Dspring.profiles.active=layer1 /virtual-factory.jar"]
     restart: always
@@ -21,8 +19,7 @@ services:
     ports:
       - 7001:7001
   virtual-factory-layer2:
-    build: virtual-factory
-    image: virtual-factory
+    image: supsi4faredge/openapi4virtualization:virtual-factory
     container_name: virtual-factory-layer2
     command: [sh, -c, "java -jar -Dspring.profiles.active=layer2 /virtual-factory.jar"]
     restart: always
