@@ -29,4 +29,3 @@ services:
       - postgres
     ports:
       - 7002:7002
-  
